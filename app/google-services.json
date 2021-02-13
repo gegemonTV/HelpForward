@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "485846374335",
+    "project_id": "help-forward",
+    "storage_bucket": "help-forward.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485846374335:android:49a8ff3c4be3ce9fef330a",
+        "android_client_info": {
+          "package_name": "com.minerva.helpforward"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485846374335-gpl9b64oto2j27cjs473jm0noulk7gbp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7SG_DB0v0TPiL9PrIXtYS6FOZ1FzvVd8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485846374335-gpl9b64oto2j27cjs473jm0noulk7gbp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
