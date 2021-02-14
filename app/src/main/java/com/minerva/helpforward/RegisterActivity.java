@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -68,6 +70,9 @@ public class RegisterActivity extends AppCompatActivity {
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if (task.isSuccessful()){
                                                     Log.d("OK", "COOL!");
+                                                    DatabaseReference _ref = FirebaseDatabase.getInstance().getReference("users");
+                                                    _ref.child(Nickname.getText().toString()).child("gems").setValue(0);
+                                                    _ref.child(Nickname.getText().toString()).child("carma").setValue(0);
                                                     Bar.setVisibility(View.GONE);
                                                     startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                                                 } else {

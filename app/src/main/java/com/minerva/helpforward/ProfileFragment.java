@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,11 +31,12 @@ public class ProfileFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
         userImage = (ShapeableImageView) rootView.findViewById(R.id.user_image);
         username = (TextView) rootView.findViewById(R.id.nickname);
-        username.setText(mUser.getDisplayName().toString());
+        username.setText(mUser.getDisplayName());
 
         Uri imageUri = mUser.getPhotoUrl();
         if (imageUri != null){
             Log.d("URI", "onCreateView: "+imageUri.toString());
+            Glide.with(this).load(imageUri).into(userImage);
         }else{
             Log.d("URI", "onCreateView: No image");
         }
