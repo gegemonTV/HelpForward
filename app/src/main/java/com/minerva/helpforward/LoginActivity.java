@@ -1,5 +1,6 @@
 package com.minerva.helpforward;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -50,8 +51,8 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-
-                                // TODO: Replace user to the main page
+                                Bar.setVisibility(View.GONE);
+                                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                             }else{
                                 Toast.makeText(getApplicationContext(), "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();

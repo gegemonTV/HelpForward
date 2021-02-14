@@ -39,6 +39,13 @@ public class StartActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        startRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+            }
+        });
     }
 
     @Override
@@ -49,10 +56,8 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() != null){
-                // TODO: Do whatever WE Want!!!
-                /*
-                 * Of course we need to replace user to the home Activity
-                 */
+                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                    Bar.setVisibility(View.GONE);
                 }else{
                     Bar.setVisibility(View.GONE);
                 }
